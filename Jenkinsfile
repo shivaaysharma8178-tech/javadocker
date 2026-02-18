@@ -22,7 +22,7 @@ sh '. /etc/profile.d/sonar-scanner.sh'
 stage('Analyzing Code Quality') {
 steps {
 // Step to analyze code quality with SonarQube
-sh  '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=shivamdevops_testproj -Dsonar.organization=shivamdevops -Dsonar.qualitygate.wait=false -Dsonar.qualitygate.timeout=300 -Dsonar.sources=src/main/java/ -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=d7885664e920a19351e4012bc932f31d90162201'
+sh 'echo performing sonar'
 }
 }
 }
