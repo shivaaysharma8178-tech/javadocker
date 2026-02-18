@@ -4,11 +4,12 @@ agent any
 stages {
 stage('chckout scm') {
 steps {
-checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shivaaysharma8178-tech/javadocker.git']])
+checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/hellokaton/java11-examples.git']])
 }
 }
 stage('Install sonarqube cli') {
 steps {
+// Step to install SonarQube CLI
 sh 'sudo apt install unzip -y'
 sh 'sudo wget -O sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip'
 sh 'sudo unzip -o -q sonar-scanner.zip'
@@ -22,7 +23,7 @@ sh '. /etc/profile.d/sonar-scanner.sh'
 stage('Analyzing Code Quality') {
 steps {
 // Step to analyze code quality with SonarQube
-sh 'echo performing sonar'
+sh  'echo hello'
 }
 }
 stage('Build') {
